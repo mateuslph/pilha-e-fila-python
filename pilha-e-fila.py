@@ -13,24 +13,30 @@ while (opcao != 's'):
             if (opcao == 'add'):
                 entrada = input('Digite o valor: ')
                 array.append(entrada)
-            elif (opcao == 'del'):
+            elif (opcao == 'del') and (array != []):
                 ultimo_elemento = array.pop()
             else:
                 break
-            print(f'O ARRAY é: {array}, e o último elemento retirado da pilha é {ultimo_elemento}')
+            if (array != []):
+                print(f'O ARRAY é: {array}, e o último elemento retirado da pilha é {ultimo_elemento}')
+            else:
+                print('O ARRAY está vazio!')
     elif (escolha == 'fila'):
         while (True):
             opcao = input('Para adicionar digite add. Para delatar digite del. Qualquer outros para sair. ')
             if (opcao == 'add'):
                 entrada = input('Digite o valor: ')
                 array.append(entrada)
-            elif (opcao == 'del'):
+            elif (opcao == 'del') and (array != []):
                 primeiro_elemento = array.pop(len(array) - len(array))
             else:
                 break
-            print(f'O ARRAY é: {array}, e o primeiro elemento retirado da fila é {primeiro_elemento}')
+            if (array != []):
+                print(f'O ARRAY é: {array}, e o primeiro elemento retirado da fila é {primeiro_elemento}')
+            else:
+                print('O ARRAY está vazio!')
     else:
         print('Você digitou a palavra errada!')
-        time.sleep(3)
+        time.sleep(2)
         break
         
